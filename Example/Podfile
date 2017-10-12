@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'XTImgTitleSubTitleCell_Example' do
+  pod 'XTImgTitleSubTitleCell', :path => '../'
+
+  target 'XTImgTitleSubTitleCell_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
