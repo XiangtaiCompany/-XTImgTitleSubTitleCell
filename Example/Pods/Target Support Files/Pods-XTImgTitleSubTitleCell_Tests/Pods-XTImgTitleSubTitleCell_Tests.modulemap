@@ -1,0 +1,6 @@
+framework module Pods_XTImgTitleSubTitleCell_Tests {
+  umbrella header "Pods-XTImgTitleSubTitleCell_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

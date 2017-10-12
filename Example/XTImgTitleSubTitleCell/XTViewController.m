@@ -7,8 +7,10 @@
 //
 
 #import "XTViewController.h"
+#import <XTImgTitleSubTitleCell/XTImgTitleSubTitleCell.h>
 
-@interface XTViewController ()
+@interface XTViewController ()<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -16,14 +18,46 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+//    [self.tableView registerClass:[XTImgTitleSubTitleCell class] forCellReuseIdentifier:@"cell"];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark- UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 3;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 10;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.001;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *ID = @"cell";
+    XTImgTitleSubTitleCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+//    if (!cell) {
+//        cell = [[XTImgTitleSubTitleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+//    }
+    if (indexPath.row == 0) {
+        cell.imgView.image = [UIImage imageNamed:@"header"];
+    }
+    cell.titleLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    cell.subTitleLabel.text = [NSString stringWithFormat:@"this is %ld", indexPath.row];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
 
 @end

@@ -1,0 +1,6 @@
+framework module XTImgTitleSubTitleCell {
+  umbrella header "XTImgTitleSubTitleCell-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - XTImgTitleSubTitleCell (0.1.0)
+
+DEPENDENCIES:
+  - XTImgTitleSubTitleCell (from `../`)
+
+EXTERNAL SOURCES:
+  XTImgTitleSubTitleCell:
+    :path: ../
+
+SPEC CHECKSUMS:
+  XTImgTitleSubTitleCell: e96d4cbaf1d37fed9f50c2e34ed1ba9113087119
+
+PODFILE CHECKSUM: f9d3d3ece88448552a265b6ddbdafea78cdf8501
+
+COCOAPODS: 1.2.1
